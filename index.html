@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Tech Documentation Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<nav id="navbar">
+  <header>Python Data Types</header>
+  <ul>
+    <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+    <li><a class="nav-link" href="#Variables">Variables</a></li>
+    <li><a class="nav-link" href="#Data_Types">Data Types</a></li>
+    <li><a class="nav-link" href="#Numbers">Numbers</a></li>
+    <li><a class="nav-link" href="#Sequences">Sequences</a></li>
+    <li><a class="nav-link" href="#Mapping">Mapping</a></li>
+    <li><a class="nav-link" href="#Sets">Sets</a></li>
+    <li><a class="nav-link" href="#Boolean">Boolean</a></li>
+  </ul>
+</nav>
+
+<main id="main-doc">
+  <section class="main-section" id="Introduction">
+    <header>Introduction</header>
+
+    <article id="what_is_python">
+      <h1> What is Python? </h1>
+      <p>Python was created by Guido van Rossum and released in 1991. The primary goal of Python is readability and simplicity. It allows programmers to write more readable code with fewer lines.</p>
+      <p>This documentation will go over the five major data types categories inherent in Python.</p>
+    </article>
+
+    <article id="intended_audience">
+      <h1>Intended Audience</h1>
+      <p>This documentation is for programmers who are beginning to use Python. A basic understanding of how to write code using Python is required.</p>
+    </article>
+  </section>
+
+  <section class="main-section" id="Variables">
+    <header>Variables</header>
+
+    <article id="variable_intro">
+      <p>A variable is a symbolic name given to some known or unknown data. Variables stores data so that a program can easily access that data or use it later. Variables are often described as labels or envelopes that store information.</p>
+    </article>
+
+    <article id="naming_variables">
+      <h1>Naming Variables</h1>
+      <p>Variables can be named using the following rules.</p>
+      <p>Variable names:</p>
+      <ul>
+        <li>Can contain upper or lowercase letters, numbers, and underscores.</li>
+        <li><strong>Must</strong> begin with a letter or an underscore.</li>
+        <li><strong>Can't</strong> start with a number.</li>
+        <li><strong>Can't</strong> contain spaces.</li>
+        <li>Shouldn't contain Python keywords and function names.</li>
+        <li>Should be short and descriptive.</li>
+        <li>Are case sensitive.</li>
+      </ul>
+
+      <p>The following are examples of acceptable variable names.</p>
+      <code>message_1
+        greeting_message
+        n
+        first_name
+      </code>
+      <p>The following are <strong>not</strong> acceptable variable names.</p>
+      <code>1_message
+        greeting message
+        length_of_persons_name
+      </code>
+      <p>Note <kbd>length_of_persons_name</kbd> is a valid variable name but long and cumbersome. A better variable is <kbd>name_length</kbd>.</p>
+    </article>
+
+  </section>
+
+  <section class="main-section" id="Data_Types">
+    <header>Data Types</header>
+
+    <article id="data_types_intro">
+      <p>In programing, data types help the computer understand and interact with the data. In Python, there are five built-in data type categories.</p>
+      <ul>
+        <li><strong>Numbers</strong>: <kbd>int</kbd>, <kbd>float</kbd>, <kbd>complex</kbd></li>
+        <li><strong>Sequences</strong>: <kbd>string</kbd>, <kbd>list</kbd>, <kbd>tuple</kbd></li>
+        <li><strong>Mapping</strong>: <kbd>dict</kbd></li>
+        <li><strong>Set</strong></li>
+        <li><strong>Boolean</strong>: <kbd>bool</kbd></li>
+      </ul>
+    </article>
+    
+    <article id="immutable_vs_mutable">
+      <h1>Immutable vs mutable data types</h1>
+      <p>Data types can either be <strong>immutable</strong> or <strong>mutable</strong>. Mutable data types can change their content once created. However, immutable data types' content can't change.</p>
+      <p>The following are <strong>immutable</strong> data types:</p>
+      <ul>
+        <li><kbd>int</kbd></li>
+        <li><kbd>float</kbd></li>
+        <li><kbd>bool</kbd></li>
+        <li><kbd>str</kbd></li>
+        <li><kbd>tuple</kbd></li>
+      </ul>
+
+      <p>The following are <strong>mutable</strong> data types:</p>
+      <ul>
+        <li><kbd>list</kbd></li>
+        <li><kbd>set</kbd></li>
+        <li><kbd>dict</kbd></li>
+      </ul>
+
+      <p>It is easier to think of mutability by thinking of a list. Consider your grocery list. Let's say that you need lettuce, bread, and eggs this week. You add them to your grocery list. Here is what your list looks like:</p>
+      <ul>
+        <li>lettuce</li>
+        <li>bread</li>
+        <li>eggs</li>
+      </ul>
+      <p>You relook at what you have at home and find that you don't need lettuce but need milk and apples. You remove lettuce from your list and add milk and apples. Here is your grocery list now:</p>
+      <ul>
+        <li>bread</li>
+        <li>eggs</li>
+        <li>milk</li>
+        <li>apples</li>
+      </ul>
+      <p>You only have one grocery list. The items on the list can change, be removed, or new items can be added.</p>
+      <p>For the number 56, if you change any digit of the number, it will be a different number altogether.</p>
+    </article>
+
+    <article id="get_data_type">
+      <h1>Get data types from a pre-existing variable</h1>
+      <p>Python automatically assigns variable data types. Once you write <kbd>x = 5</kbd>, then <samp>x</samp> has the data type of <samp>int</samp>. Get an object's data type by using the method <kbd>type()</kbd>. Change an object's data type by recasting it.</p>
+      <p>Get the data type of any object by using the <kbd>type()</kbd> function. For example, <kbd>type(5)</kbd> will return <samp>int</samp> and <kbd>type(5.0)</kbd> will return <samp>float</samp>.</p>
+      <p>The code below is an example for getting the data type of a variable.</p>
+      <code>x = 5
+        type(x)</code>
+    </article>
+
+    <article id="set_data_type">
+      <h1>Set variable data type</h1>
+      <p>Python automatically assigns varaible data types. There may be a time that you want to stipulate a data type to a variable. Specify a variable's data type by using the <kbd>int()</kbd>, <kbd>float()</kbd>, or <kbd>str()</kbd> constructor when assigning values to variables. For example:</p>
+      <code>x = str("Hello") 
+        y = str(5)</code>
+      <p>The above code will assign the data type <samp>string</samp> to the variables <samp>x</samp> and <samp>y</samp> even if <samp>5</samp> is an integer.</p>
+    </article>
+    
+    <article id="changing_data_type">
+      <h1>Changing variable data types (casting)</h1>
+      <p>You may want to change a variable's data type. Specifying the type of data by using constructor functions will recast the variable into the desired data type.</p>
+      <ul>
+        <li><kbd>int()</kbd> - Casts any integer, float, or string into an integer data type.</li>
+        <li><kbd>float()</kbd> - Casts any integer, float, or string into a float data type.</li>
+        <li><kbd>str()</kbd> - Casts any data into a string data type.</li>
+      </ul>
+      
+      <article id="using_int">
+        <h2>Using <kbd style="font-size: 18px">int()</kbd></h2>
+        <p>The <kbd>int()</kbd> constructor casts any integer, float, or string into an integer data type. For example:</p>
+        <code>x = int(1)
+        y = int(2.8)
+        z = int("3")</code>
+        <p>The above code will give the following values:</p>
+        <code>x = 1
+        y = 2
+        z = 3</code>
+        <p>Note that the value for <samp>y</samp> is <samp>2</samp>. The <kbd>int()</kbd> constructor does not round a number; it ignores the decimal part.</p>
+        <p>The <kbd>int()</kbd> constructor will only cast strings into integer data types if the string represents a whole number. The following code will return an error.</p>
+        <code>x = int('three')
+        y = int("3.8")</code>
+      </article>
+      
+      <article id="using_float">
+        <h2>Using <kbd style="font-size: 18px">float()</kbd></h2>
+        <p>The <kbd>float()</kbd> constructor casts any integer, float, or string into a float data type. For example:</p>
+        <code>x = float(1)
+        y = float(2.8) 
+        z = float("3") 
+        w = float("4.2")</code>
+        <p>The above code will give the following values:</p>
+        <code>x = 1.0 
+        y = 2.8 
+        z = 3.0 
+        2 = 4.2</code>
+        <p>Note that the <kbd>float()</kbd> constructor will only cast strings into float data types if the string represents a float or a whole number. The following code will return an error.</p>
+        <code>x = float("three")</code>
+      </article>
+    
+      <article id="using-string">
+        <h2>Using <kbd style="font-size: 18px">str()</kbd></h2>
+        <p>The <kbd>str()</kbd> constructor casts all data types into a string data type. For example:</p>
+        <code>x = str("s1") 
+        y = str(2) 
+        z = str(3.0)</code>
+        <p>The above code will give the following values:</p>
+        <code>x = 's1' 
+        y = '2' 
+        z = '3.0' </code>
+      </article>
+    </article>
+     
+  </section>
+
+  <section class="main-section" id="Numbers">
+    <header>Numbers</header>
+    <article id="numbers_intro">
+      <p>Python has three number types.</p>
+      <ul>
+        <li><samp>int</samp></li>
+        <li><samp>float</samp></li>
+        <li><samp>complex</samp></li>
+      </ul>
+      <p>Python automatically assigns varaible data types.</p>
+    </article>
+    
+    <article id="int">
+      <h1>Integer</h1>
+      <p>An integer is a whole number that is either positive, negative, or zero and can have unlimited length. The following are examples of integers data types.</p>
+      <code>x = 1
+        y = 416_583_780
+        z = 0
+        2 = -3583</code>
+      <p>Note that <samp>y</samp> groups digits using underscores. Grouping digits using underscores makes it easier to read. It is optional and up to the programmer's style.</p>
+    </article>
+    
+    <article id="float">
+      <h1>Float</h1>
+      <p>A float is a number that can be positive or negative and contains one or more decimals. It can also be of any length. The following are examples of float data types.</p>
+      <code>x = 1.10 
+        y = 1.0 
+        z = -35.59</code>
+    </article>
+    
+    <article id="complex">
+      <h1>Complex</h1>
+      <p>Python uses a <em>j</em> to write complex or imaginary numbers instead of the traditional <em>i</em>. The following are examples of complex data types.</p>
+      <code>x = 3 + 5j 
+        y = 5j 
+        z = -5j</code>
+      <p>Cast any number type into complex numbers using <kbd>complex()</kbd>. <kbd>complex(1)</kbd> will return <samp>1 + 0j</samp>. <kbd>complex(1.4)</kbd> will return <samp>1.4+ 0j</samp>. Complex numbers cannot be recasted into another number type.</p>
+      <p>Casting between data types can be found in the <a href="#changing_data_type">Changing Data Type</a> section.</p>
+    </article>
+  </section>
+
+  <section class="main-section" id="Sequences">
+    <header>Sequences</header>
+    <article id="sequences_intro">
+      <p>The sequence data type consists of string, list, and tuple.</p>
+      <ul>
+        <li>String- An <em>ordered</em> and <em>immutable</em> sequence of characters.</li>
+        <li>List - An <em>ordered</em> and <em>immutable</em> sequence of values that <em>can</em> have duplicate items.</li>
+        <li>Tuple - An <em>ordered</em> and <em>immutable</em> sequence of values that <em>can</em> have duplicate items.</li>
+      </ul>
+    </article>
+    
+    <article id="string">
+      <h1>String</h1>
+      <article id="string_intro">
+        <p>The string data type in Python is a sequence of character data. Single or double quotes can be used around a string. 'hello' and "hello" are the same.</p>
+      </article>
+    
+      <article id="assigning_string_to_variable">
+      <h2>Assigning a string to a variable</h2>
+      <p>Assign a string to a variable by giving a variable name followed by an equal sign and the string in single or double quotes.</p>
+      <code>a = "hello"</code>
+    </article>
+    
+      <article id="multi-lined_strings">
+      <h2>Multi-line strings</h2>
+      <p>Assign a multi-line string to a variable by using three single or double quotes.</p>
+      <code> a = """A multi-line string can 
+        be assigned to the variable using 
+        three quotation marks."""</code>
+    </article>
+    
+      <article id="string_stored_as_sequences">
+      <h2>String stored as sequence</h2>
+      <p>Similar to other programming languages, Python stores strings as an array of single characters. Because Python does not have a character data type, it stores a single character as a string with a length of 1. Access any character in a string by calling the index of that character. Note Python calls the first character in a string using <kbd>index[0]</kbd> consistent with this data type category.</p>
+      <p>In <kbd>a = 'I am a string.'</kbd>, <kbd>a[3]</kbd> will return the value <samp>m</samp>.</p>
+    </article>
+    </article>
+    
+    <article id="list">
+      <h1>List</h1>
+      <article id="list_intro">
+        <p>Lists are a collection of multiple items stored in a single variable. Create lists using square brackets:</p>
+        <code>myList = [item1, item2, item3]</code>
+        <p>Items in a list are:</p>
+        <ul>
+          <li>Ordered.</li>
+          <li>Mutable.</li>
+          <li>Allowed to have duplicate values</li>
+        </ul>
+        <p>List items are indexed with the first item as <samp>index[0]</samp>.</p>
+      </article>
+      
+      <article id="lists_are_orderd">
+        <h2>Lists are ordered</h2>
+        <p>Items in a list have a defined order. Python adds new items to the end of a list.</p>
+      </article>
+      
+      <article id="lists_are_mutable">
+        <h2>Lists are mutable</h2>
+        <p>Items in a list can be changed, added, and removed after list creation.</p>
+      </article>
+      
+      <article id="lists_allows_duplicates">
+        <h2>Lists allows duplicate items</h2>
+        <p>Since list items are indexed, a list can have multiple items with the same value.</p>
+        <code>myList = ["red", "green", "blue", "red", "yellow"]</code>
+        <p>myList has two "red" values in the list. Each instance of the item "red" has a different index. Call each instance of the item "red" by using the index. <kbd>myList[0]</kbd> will call the first "red" item. <kbd>myList[3]</kbd> will call the second "red" item.</p>
+      </article>
+      
+      <article id="data_types_in_lists">
+        <h2>Data types in lists</h2>
+        <p>List items can be any data type native to Python. It can also contain different data types within the same list. For example:</p>
+        <code>list1 = [1, 2, 3, 4] 
+          list2 = ["she", "sells", "seashells", "by", "the", "seashore"] 
+          list3 = [True, False, False] 
+          list4 = [1, "she", True, 2, "sells", False, False] </code>
+      </article>
+    </article>
+    
+    <article id="tuple">
+      <h1>Tuples</h1>
+      <article id="tuple_intro">
+        <p>Tuples are similar to lists in that it stores multiple ordered items in a single variable. However, a tuple is immutable.</p>
+        <p>Use round brackets when writing tuples.</p>
+        <code>myTuple = (item1, item2, item3)</code>
+        <p>Items in a tuple are:</p>
+        <ul>
+          <li>Ordered.</li>
+          <li>Immutable.</li>
+          <li>Allowed to have duplicate values.</li>
+        </ul>
+        <p>Python index tuple items like list items. The first item has <samp>index[0]</samp> and so on.</p>
+      </article>
+      
+      <article id="tuples_are_ordered">
+        <h2>Tuples are ordered</h2>
+        <p>Tuples have a defined order that does not change each time you call it.</p>
+      </article>
+      
+      <article id="tuples_are_immutable">
+        <h2>Tuples are immutable</h2>
+        <p>Items can't be added, removed, or changed after tuple creation.</p>
+      </article>
+      
+      <article id="tuples_allows_duplicates">
+        <h2>Tuples allow duplicate items</h2>
+        <p>Like lists, multiple items in a tuple can have the same value because items are indexed.</p>
+        <code>myTuple = ('a', 'b', 'c', 'b')</code>
+        <p>myTuple has the value 'b' twice but each instance of 'b'has a different index. Call each instance of 'b' by its index. <kbd>myTuple[1]</kbd> will call the first 'b' item and <kbd>myTuple[3]</kbd> will call the second 'b' item.</p>
+        <p>Note, when creating a tuple with one item, add a comma after the item. If the comma is missing, Python will not recognize it as a tuple.</p>
+      </article>
+      
+      <article id="data_types_in_tuples">
+        <h2>Data types in tuples</h2>
+        <p>Tuple items can have any data type. It can also contain different data types within the same tuple. For example:</p>
+        <code>tuple1 = [1, 2, 3, 4] 
+          tuple2 = ["she", "sells", "seashells", "by", "the", "seashore"] 
+          tuple3 = [True, False, False] 
+          tuple4 = [1, "she", True, 2, "sells", False, False] </code>
+      </article>
+    </article>
+  </section>
+
+  <section class="main-section" id="Mapping">
+    <header>Mapping</header>
+    <p>In Python, dictionary is the only mapping data type.</p>
+    <article id="dictionary">
+      <h1>Dictionary</h1>
+      <article id="dictionary_intro">
+        <p>Dictionaries help connect pieces of related information. A dictionary is a collection of key:value pairs that pairs a key to a value.</p>
+        <p>Dictionaries in Python version 3.6 or earlier are unordered but are ordered in version 3.7. We will assume that dictionaries are ordered.</p>
+        <p>Items in dictionaries are:</p>
+        <ul>
+        <li>Ordered.</li>
+        <li>Mutable.</li>
+        <li>Not allowed to have duplicates.</li>
+      </ul>
+        <p>Use curly brackets when writing dictionaries.</p>
+        <code style="white-space: pre">myDict = { "red": "apple", 
+  "orange": "orange", 
+  "purple": "grapes" }</code>
+        <p>Note that dictionaries can be written horizontally with key:value pairs separated by a comma. However, writing dictionaries vertically makes it easier to read.</p>
+      </article>
+    
+      <article id="dictionaries_are_ordered">
+        <h2>Dictionaries are ordered</h2>
+        <p>In Python version 3.7, dictionaries are ordered. In earlier versions of Python, dictionaries are unordered. We will assume that they are ordered here.</p>
+        <p>Items in a dictionary have a defined order that will not change. Refer to specific items in a dictionary by using its index.</p>
+      </article>
+      
+      <article id="dictionaries_are_mutable">
+        <h2>Dictionaries are mutable</h2>
+        <p>Items in a dictionary can be changed, added, or removed after dictionary creation.</p>
+      </article>
+      
+      <article id="dictionaries_don't_allow_duplicates">
+        <h2>Dictionaries don't allow duplicate keys</h2>
+        <p>Each key in the key:value pairs must be unique. Two items in a dictionary can't have the same key. Duplicate values will overwrite the existing values.</p>
+        <code style="white-space: pre">myDict = { "brand": "Apple", 
+  "model": "iPhone6", 
+  "year": 2008, 
+  "year": 2010 }</code>
+        <p>In the above code, the key <samp>year</samp> will have the value of <samp>2010</samp>.</p>
+      </article>
+      
+      <article id="data_types_in_dictionaries">
+        <h2>Data types in dictionaries</h2>
+        <p>The data type for the key can be a number, string, float, boolean, tuple, or any built-in object as long as it is immutable. <kbd>list</kbd>, <kbd>dict</kbd>, or <kbd>set</kbd> can't be used as keys in dictionaries.</p>
+        <p>The data type for values can be any data type.</p>
+      </article>
+    </article>
+  </section>
+
+  <section class="main-section" id="Sets">
+    <header>Sets</header>
+    <article id="set_into">
+      <p>Sets, similar to list and tuple, are used to store multiple items in a single variable.</p>
+      <p>A set is:</p>
+      <ul>
+        <li>Unordered.</li>
+        <li>Unindexed.</li>
+        <li>Not allowed to have duplicate values.</li>
+      </ul>
+      <p>Use curly brackets when writing sets.</p>
+      <code>mySet = {"a", "b", "c"}</code>
+    </article>
+    
+    <article id="set_are_unordered">
+      <h2>Sets are unordered</h2>
+      <p>The items in the set do not have a defined order. The items can appear in a different order each time you call the set. Therefore, the items can't be referred to by their index or key.</p>
+    </article>
+    
+    <article id="sets_are_immutable">
+      <h2>Sets are immutable</h2>
+      <p>Items in a set can't be changed after a set's creation. New items can be added.</p>
+    </article>
+    
+    <article id="sets_don't_allow_duplicates">
+      <h2>Sets don't allow duplicates</h2>
+      <p>Sets ignore any duplicate items.</p>
+    </article>
+    
+    <article id="data_types_in_sets">
+      <h2>Data types in sets</h2>
+      <p>Set items can be of any data type and can contain different data types.</p>
+      <code>set1 = {"eggplant", "broccoli", "cauliflower"} 
+        set2 = {1, 3, 5, 7}
+        set3 = {True, True, False} 
+        set4 = {"a", 36, True, "broccoli", 3} </code>
+      <p>Note that in <samp>set3</samp>, Python will ignore the second <samp>True</samp> when recalling and storing the set.</p>
+    </article>
+    
+  </section>
+
+  <section class="main-section" id="Boolean">
+    <header>Boolean</header>
+    <article id="boolean_intro">
+      <p>Booleans values are either <samp>True</samp> or <samp>False</samp>.</p>
+      <p>Sometimes, it is helpful to know the Boolean value of a condition or expression. Python can evaluate any expression for its Boolean value. It may be helpful to understand it as a condition.</p>
+      <code>print(10 &gt 9) 
+        print(10 == 9) 
+        print(10 &lt 9) </code>
+      <p>The code above will print True, False, and False respectively. Boolean values provide an efficient way to track a particular condition in your program.</p>
+    </article>
+    
+    <article id="evaluate_boolean_values">
+      <h2>Evaluate Boolean values using <kbd style="font-size: 18px">bool()</kbd></h2>
+      <p>The <kbd>bool()</kbd> function evaluates any value and gives a return value of <samp>True</samp> or <samp>False</samp>.</p>
+      <code>x = bool("Hello") 
+        y = bool(15)</code>
+      <p>The code above will set both <samp>x</samp> and <samp>y</samp> to be <samp>True</samp>.</p>
+    </article>
+    
+    <article id="when_bool_returns_true">
+      <h2>When <kbd style="font-size: 18px">bool()</kbd> returns <samp style="font-size: 18px">True</samp></h2>
+      <p>Almost all values in Python are evaluated to <samp>True</samp> if it has some content. </p>
+      <ul>
+        <li>All strings will return <samp>True</samp> unless it is an empty string</li>
+        <li>All numbers will return <samp>True</samp> unless it is <samp>0</samp>.</li>
+        <li>All <samp>list</samp>, <samp>tuple</samp>, <samp>set</samp>, and <samp>dict</samp> will return <samp>True</samp>, unless it is empty.</li>
+      </ul>
+    </article>
+    
+    <article id="when_bool_returns_false">
+      <h2>When <kbd style="font-size: 18px">bool()</kbd> returns <samp style="font-size: 18px">False</samp></h2>
+      <p>Few values evaluate to <samp>False</samp>. Empty values, <samp>0</samp>, <samp>False</samp>, and <samp>None</samp> will all return <samp>False</samp>. The examples below will all return <samp>False</samp>.</p>
+      <code>bool(Fasle) 
+        bool(None) 
+        bool(0) 
+        bool(" ") 
+        bool(()) 
+        bool([]) 
+        bool({})</code>
+    </article>
+  </section>
+</main>
+<!-- partial -->
+  <script src='https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
